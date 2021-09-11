@@ -1,0 +1,111 @@
+anvas {
+  background-color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+body{
+      color: #FFFFFF;
+      margin: 0;
+      padding: 0;
+}
+
+.ShopButton {
+  position: relative;
+  background: transparent;
+  font-size: 15px;
+  color: #FFFFFF;
+  padding: 5px;
+  width: 200px;
+  height: 30px;
+  text-align: center;
+  transition-duration: 0.6s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid #000000;
+  border-radius:25px;
+}
+
+.ShopButton:after {
+  content: "";
+  background: white;
+  display: block;
+  padding-top: 500%;
+  padding-left: 150%;
+  margin-left: -20px !important;
+  margin-top: -100%;
+  opacity: 0;
+  transition: all 1.2s;
+}
+
+.ShopButton:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s;
+}
+
+.ShopContainer{
+  width: 200px;
+  display: block;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  right: 0px;
+}
+
+.MobileButton {
+  display: block;
+  background: transparent;
+  width: 125px;
+  height: 125px;
+  border: 3px solid white;
+  border-radius: 50%;
+  color: white;
+  font-size: 30px;
+}
+
+.text1 {
+  color: white;
+}
+
+.loading-container{
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading{
+  width: 50px;
+  height: 50px;
+  border: 3px solid;
+  color: lime;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading{
+  25% {
+    color: purple;
+  }
+  
+  50% {
+    color: blue;
+  }
+  
+  75%{
+    color: yellow;
+  }
+  
+  100%{
+    color: red;
+    transform: rotate(360deg)
+  }
+}
