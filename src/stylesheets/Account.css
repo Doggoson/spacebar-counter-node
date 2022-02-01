@@ -1,0 +1,74 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Courier New", monospace;
+  font-style: italic;
+  background: #34495e;
+}
+
+a {
+  color: blue;
+}
+
+.box {
+  display: block;
+  border-radius: 20px;
+  height: auto;
+  width: 300px;
+  padding: 20px;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  background: #191919;
+  text-align: center;
+  justify-content: center;
+}
+
+.box h1 {
+  color: white;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.box-idiv {
+  border: 2px solid #444444;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 20px;
+  transition: 0.25s;
+}
+
+.box input[type="text"]:hover,
+.box input[type="password"]:hover {
+  border-color: #2ecc71;
+}
+
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+  width: 280px;
+  border-color: #2ecc71;
+}
+
+.box input[type="submit"] {
+  border: 2px solid #444444;
+  background: none;
+  text-align: center;
+  padding: 14px;
+  width: 200px;
+  outline: none;
+  border-radius: 20px;
+  transition: 0.25s;
+  color: white;
+  cursor: pointer;
+}
+
+.box input[type="submit"]:hover {
+  background: #2ecc71;
+}
