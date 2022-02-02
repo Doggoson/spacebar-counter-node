@@ -1,0 +1,13 @@
+{
+  "name": "Spacebar Counter Noah",
+  "main": "Main.js",
+  "scripts": {
+    "start": "node ."
+  },
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "engines": {
+    "node": "16.x"
+  }
+}
