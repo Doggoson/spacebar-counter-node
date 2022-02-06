@@ -1,5 +1,6 @@
 var Base = require('./Object');
-var BaseArray = Object.keys({ Base });
+var BaseArray = Object.entries(Base);
+var Json = JSON.stringify(Base).split("{").join("{\n").split(":").join(": ").split(",").join(",\n").split("}").join("}");
 const fs = require('fs');
 
 module.exports = {
@@ -13,7 +14,7 @@ module.exports = {
         Base[id][key] = value
         await Base[id][key];
 
-        fs.writeFileSync(__dirname + '/Object.json', JSON.stringify(Base));
+        fs.writeFileSync(__dirname + '/Object.json', Json);
     },
   fetch:(id, key) => {
     if(!Base[id]) return null;
@@ -31,16 +32,16 @@ module.exports = {
         Base[id][key] = Base[id][key] + value
     },
   all:() => {
-    return Base;
+    return BaseArray;
   },
   users: {
     create:async (username, password) => {
       
+      if(!username || !password) throw new Error("No username or password");
+      
       for(var i = 0; i < BaseArray.length; i++) {
-        console.log(BaseArray[i].Username);
-        if(BaseArray[i].Username === username) {
-          return
-        }
+        console.log(`User ${i + 1}: ${BaseArray[i][1].Username}`);
+        if(BaseArray[i][1].Username === username) return;
       }
       
       var ID = Math.floor(Math.random() * 9999999999)+ 1111111111;
@@ -54,14 +55,13 @@ module.exports = {
         }
       }
       
-      Base[ID] = { Username: username, Password: password, Data: { } }
-      fs.writeFileSync(__dirname + '/Object.json', JSON.stringify(Base)) 
+      Base[ID] = { Username: username, Password: password, Data: {} }
+      fs.writeFileSync(`${__dirname}/Object.json`, Json); 
   },
-  find:(username) => {
+  findByUsername:(username) => {
     for(var i = 0;i < BaseArray.length;i++) {
-      if(BaseArray[i].Username === username) {
-        console.log("Found user.");
-        return Object.keys({ Base })[i][0];
+      if(BaseArray[i][1].Username === username) {
+        return BaseArray[i][0];
       }
    }
   }
