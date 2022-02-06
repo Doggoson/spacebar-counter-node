@@ -3,6 +3,7 @@ const express = require('express'),
   fs = require('fs'),
   app = express(),
   db = require('./src/data/Base'),
+  $ = require('jquery'),
   server = { status: false };
 
 const auth = express.Router();
@@ -12,6 +13,8 @@ const users = express.Router();
 app.use("/auth", auth);
 app.use("/accounts", accounts);
 app.use("/users", users);
+
+db.users.create("A roach", "whatthefuck");
 
 app.listen(8080);
 
