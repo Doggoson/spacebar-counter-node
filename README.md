@@ -1,3 +1,4 @@
-*This is a project of mine, For free time during school or any use really.*
-
-*Made in Native JavaScript, Html, Css*
+# Spacebar Counter Node
+- *This is a project of mine, Just to pass time.*
+# Info
+- *Made in Native JavaScript, Html, Css*
